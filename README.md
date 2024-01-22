@@ -4,4 +4,10 @@ This project is to develop a restaurant spin the wheel to interact with through 
 
 The project will consist of multiple wheels. The first wheel spun will consist of restaurant categories (ex., burgers, sushi, pizza, etc.). The second wheel will consist of restaurants that are a part of that category, so examples for burgers could be McDonald's, Wendy's, A&W, etc.
 
+To summarize:
+
+- First wheel spins to determine the category
+- Second wheel contains restaurants depending on the first wheel's spin
+- Second wheel spins to determine the restaurant
+
 This is meant to help decide where to eat.
