@@ -14,25 +14,25 @@ function spinWheel() {
 function getRestaurants(category) {
     switch (category) {
         case 'Burgers':
-            return ['A&W', 'McDonald\'s', 'Burger King'];
+            return ['A&W', 'McDonald\'s', 'Burger King', 'Wendy\'s', 'Dairy Queen', ];
         case 'Pizza':
             return ['Domino\'s', 'Pizza Hut', 'Little Caesars'];
         case 'Sushi':
             return ['Sushi Samba', 'Nobu', 'Yo! Sushi'];
         case 'Breakfast':
-            return [''];
+            return ['Cheeky Neighbour', 'Smitty\'s'];
         case 'Indian':
-            return [''];
+            return ['Curry'];
         case 'Mexican':
-            return [''];
+            return ['Taco Bell', 'Mexi\'s', 'Antojo\'s'];
         case 'Asian':
-            return [''];
+            return ['Thai Express', 'Pho', 'etc'];
         case 'Chinese':
-            return [''];
+            return ['Great Wall', 'Jean\'s'];
         case 'Mediterranean':
-            return [''];
+            return ['Shawarma'];
         case 'Italian':
-            return [''];
+            return ['Pasghetti'];
         default:
             return [];
     }
