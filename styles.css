@@ -1,7 +1,7 @@
 /* styles.css */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f0f0f0;
+    background-color: #ffc0cb;
     text-align: center;
 }
 
@@ -9,7 +9,7 @@ body {
     max-width: 600px;
     margin: 50px auto;
     padding: 20px;
-    background-color: #fff;
+    background-color: #add8e6;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
