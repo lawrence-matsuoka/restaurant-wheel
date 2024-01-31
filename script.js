@@ -19,19 +19,19 @@ function getRestaurants(category) {
             return ['Domino\'s', 'Pizza Hut', 'Little Caesars'];
         case 'Sushi':
             return ['Sushi Samba', 'Nobu', 'Yo! Sushi'];
-        case '':
+        case 'Breakfast':
             return [''];
-        case '':
+        case 'Indian':
             return [''];
-        case '':
+        case 'Mexican':
             return [''];
-        case '':
+        case 'Asian':
             return [''];
-        case '':
+        case 'Chinese':
             return [''];
-        case '':
+        case 'Mediterranean':
             return [''];
-        case'':
+        case 'Italian':
             return [''];
         default:
             return [];
