@@ -12,6 +12,9 @@ To summarize:
 
 This is meant to help decide where to eat.
 
-# To-Do
+## To-Do
 
-Add the option to first select categories to add to the wheel
+- Add the option to first select categories to add to the wheel
+- Solidify the categories and restaurants in each category
+- Make it easy to add restaurants to the list
+- Abstract both the categories and restaurants into nested arrays?
