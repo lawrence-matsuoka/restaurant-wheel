@@ -11,3 +11,7 @@ To summarize:
 - Second wheel spins to determine the restaurant
 
 This is meant to help decide where to eat.
+
+# To-Do
+
+Add the option to first select categories to add to the wheel
