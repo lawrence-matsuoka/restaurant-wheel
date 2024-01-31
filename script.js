@@ -10,3 +10,16 @@ function spinWheel() {
     });
 }
 
+// Call the function
+function getRestaurants(category) {
+    switch (category) {
+        case 'Burgers':
+            return ['A&W', 'McDonald\'s', 'Burger King'];
+        case 'Pizza':
+            return ['Domino\'s', 'Pizza Hut', 'Little Caesars'];
+        case 'Sushi':
+            return ['Sushi Samba', 'Nobu', 'Yo! Sushi'];
+        default:
+            return [];
+    }
+}
