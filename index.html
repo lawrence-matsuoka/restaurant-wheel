@@ -4,15 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Spin the Wheel</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="stylesheet.css">
 </head>
 <body>
   <div id="wheel-container">
     <div class="wheel" id="category-wheel">
       <!-- Categories go here -->
+      <div class="category-slice">Burgers</div>
+      <div class="category-slice">Pizza</div>
+      <!-- Add other categories as needed -->
     </div>
     <div class="wheel" id="restaurant-wheel" style="display: none;">
       <!-- Restaurants go here -->
+      <div class="restaurant-slice">A&W</div>
+      <div class="restaurant-slice">McDonald's</div>
+      <!-- Add other restaurants as needed -->
     </div>
     <button onclick="spinWheel()">Spin</button>
   </div>
