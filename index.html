@@ -1,22 +1,22 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Spin the Wheel</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spin the Wheel</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Spin the Wheel</h1>
-        <div id="wheel-container">
-            <div id="category-wheel"></div>
-            <div id="restaurant-wheel"></div>
-        </div>
-        <button id="spin-button">Spin</button>
+  <div id="wheel-container">
+    <div class="wheel" id="category-wheel">
+      <!-- Categories go here -->
     </div>
-    <script src="wheel.js"></script>
-    <script src="script.js"></script>
+    <div class="wheel" id="restaurant-wheel" style="display: none;">
+      <!-- Restaurants go here -->
+    </div>
+    <button onclick="spinWheel()">Spin</button>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>

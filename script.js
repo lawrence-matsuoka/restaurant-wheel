@@ -1,27 +1,34 @@
-// script.js
-const categoryWheel = new Wheel(document.getElementById('category-wheel'), ['Burgers', 'Pizza', 'Sushi']);
-const restaurantWheel = new Wheel(document.getElementById('restaurant-wheel'), []);
+const categories = ["Burgers", "Pizza", "Sushi"]; // Example categories
+const restaurants = {
+  Burgers: ["A&W", "McDonald's", "Burger King"],
+  Pizza: ["Domino's", "Little Caesars", "Pizza Hut"],
+  Sushi: ["Sushi Palace", "Mikado", "Tokyo Sushi"],
+};
+
+let categoryWheel = document.getElementById("category-wheel");
+let restaurantWheel = document.getElementById("restaurant-wheel");
 
 function spinWheel() {
-    categoryWheel.spin().then(selectedCategory => {
-        const selectedRestaurants = getRestaurants(selectedCategory);
-        restaurantWheel.updateItems(selectedRestaurants).spin();
-    });
+  // Simulate spinning logic
+  let categoryIndex = Math.floor(Math.random() * categories.length);
+  let restaurantIndex = Math.floor(Math.random() * restaurants[categories[categoryIndex]].length);
+
+  // Rotate wheels
+  rotateWheel(categoryWheel, categoryIndex);
+  setTimeout(() => {
+    rotateWheel(restaurantWheel, restaurantIndex);
+  }, 1500); // Delay before spinning the second wheel
+
+  // Display the second wheel
+  categoryWheel.style.display = "none";
+  restaurantWheel.style.display = "block";
 }
 
-function getRestaurants(category) {
-    switch (category) {
-        case 'Burgers':
-            return ['A&W', 'McDonald\'s', 'Burger King'];
-        case 'Pizza':
-            return ['Domino\'s', 'Pizza Hut', 'Little Caesars'];
-        case 'Sushi':
-            return ['Sushi Samba', 'Nobu', 'Yo! Sushi'];
-        default:
-            return [];
-    }
-}
+function rotateWheel(wheel, selectedIndex) {
+  const totalSlices = categories.length; // Change this to the total number of categories or restaurants
+  const degrees = 360 / totalSlices;
+  const rotation = 360 * 5 + degrees * selectedIndex;
 
-document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('spin-button').addEventListener('click', spinWheel);
-});
+  wheel.style.transition = "transform 3s ease-out";
+  wheel.style.transform = `rotate(${rotation}deg)`;
+}
