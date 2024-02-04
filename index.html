@@ -3,25 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Spin the Wheel</title>
-  <link rel="stylesheet" href="stylesheet.css">
+  <link rel="stylesheet" href="styles.css">
+  <title>Restaurant Wheel</title>
 </head>
 <body>
-  <div id="wheel-container">
-    <div class="wheel" id="category-wheel">
-      <!-- Categories go here -->
-      <div class="category-slice">Burgers</div>
-      <div class="category-slice">Pizza</div>
-      <!-- Add other categories as needed -->
-    </div>
-    <div class="wheel" id="restaurant-wheel" style="display: none;">
-      <!-- Restaurants go here -->
-      <div class="restaurant-slice">A&W</div>
-      <div class="restaurant-slice">McDonald's</div>
-      <!-- Add other restaurants as needed -->
-    </div>
-    <button onclick="spinWheel()">Spin</button>
+  <div id="categoryWheel" class="wheel" style="--num-slices: 3;">
+    <!-- Categories -->
+    <div class="category" style="--angle: 0;">Sushi</div>
+    <div class="category" style="--angle: 120deg;">Pizza</div>
+    <div class="category" style="--angle: 240deg;">Burger</div>
+    <!-- Add more categories as needed -->
   </div>
+
+  <div id="restaurantWheel" class="wheel">
+    <!-- Restaurants -->
+    <div class="restaurant" style="--angle: 0;">Sushi Nami</div>
+    <div class="restaurant" style="--angle: 72deg;">Sushi Jet</div>
+    <div class="restaurant" style="--angle: 144deg;">Dominos</div>
+    <div class="restaurant" style="--angle: 216deg;">Pizza Pizza</div>
+    <div class="restaurant" style="--angle: 288deg;">Wendy's</div>
+    <div class="restaurant" style="--angle: 360deg;">McDonald's</div>
+    <!-- Add more restaurants as needed -->
+  </div>
+
+  <button id="spinBtn" onclick="spinCategoryWheel()">Spin</button>
 
   <script src="script.js"></script>
 </body>
