@@ -1,59 +1,31 @@
-const categories = [
-    {
-      name: 'Sushi',
-      restaurants: ['Sushi Nami', 'Sushi Jet']
-    },
-    {
-      name: 'Pizza',
-      restaurants: ['Dominos', 'Pizza Pizza']
-    },
-    {
-      name: 'Burger',
-      restaurants: ['Wendy\'s', 'McDonald\'s']
-    }
-    // Add more categories as needed
-  ];
-  
-  let categoryIndex = 0;
-  let restaurantIndex = 0;
-  
-  function renderWheel(wheelId, slices, backgroundColor) {
-    const wheel = document.getElementById(wheelId);
-    wheel.innerHTML = '';
-  
-    const angle = 360 / slices.length;
-  
-    for (let i = 0; i < slices.length; i++) {
-      const slice = document.createElement('div');
-      slice.className = 'pie-slice';
-      slice.style.borderWidth = `0 ${angle}px ${Math.max(document.documentElement.clientHeight, window.innerHeight || 0)}px`;
-      slice.style.transform = `rotate(${angle * i}deg)`;
-      slice.style.backgroundColor = backgroundColor;
-      slice.innerText = slices[i];
-      wheel.appendChild(slice);
-    }
+const wheel = document.getElementById('wheel');
+const resultDiv = document.getElementById('result');
+let spinning = false;
+
+const spinWheel = () => {
+  if (!spinning) {
+    spinning = true;
+    const degrees = Math.floor(Math.random() * 360) + 3600; // Random number of degrees (10 spins)
+    
+    wheel.style.transform = `rotate(${degrees}deg)`;
+    
+    setTimeout(() => {
+      spinning = false;
+      displayResult(degrees % 360);
+    }, 3000); // Match the transition time
   }
-  
-  function spinWheel() {
-    const categoryWheel = document.getElementById('category-wheel');
-    const restaurantWheel = document.getElementById('restaurant-wheel');
-  
-    const categorySlices = categories.map(category => category.name);
-    renderWheel('category-wheel', categorySlices, '#e74c3c');
-  
-    const currentCategory = categories[categoryIndex];
-    const restaurantSlices = currentCategory.restaurants;
-    renderWheel('restaurant-wheel', restaurantSlices, '#3498db');
-  
-    categoryWheel.style.transform = `rotate(${360 * Math.random()}deg)`;
-    restaurantWheel.style.transform = `rotate(${360 * Math.random()}deg)`;
-  
-    categoryIndex = Math.floor(Math.random() * categories.length);
-    restaurantIndex = Math.floor(Math.random() * currentCategory.restaurants.length);
-  }
-  
-  function getSelectedRestaurant() {
-    const currentCategory = categories[categoryIndex];
-    return currentCategory.restaurants[restaurantIndex];
-  }
-  
+};
+
+const displayResult = (angle) => {
+  const pieSliceNumber = Math.floor(angle / (360 / numSlices)); // Assuming you have a specific number of pie slices
+  resultDiv.textContent = `You landed on slice ${pieSliceNumber + 1}`;
+};
+
+// Add pie slices dynamically (customize numSlices as per your requirement)
+const numSlices = 8;
+for (let i = 0; i < numSlices; i++) {
+  const slice = document.createElement('div');
+  slice.className = 'slice';
+  slice.style.background = i % 2 === 0 ? '#FF6347' : '#6495ED'; // Alternating colors
+  wheel.appendChild(slice);
+}
